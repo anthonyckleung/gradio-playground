@@ -1,3 +1,4 @@
+from joblib import dump
 from sklearn import datasets
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.model_selection import train_test_split
@@ -29,4 +30,6 @@ print(confusion_matrix(y_test, y_pred))
 # Accuracy score
 print('Overall accuracy is',accuracy_score(y_pred, y_test)*100, '%')
 
-
+# Export model
+print("Export model as iris_svc.joblib")
+dump(classifier, 'iris_svc.joblib')
